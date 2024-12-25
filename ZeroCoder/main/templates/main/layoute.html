@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 
+
     <!-- Подключение Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -35,6 +36,7 @@
             <ul class="list-group">
                 <li class="list-group-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
                 <li class="list-group-item"><a href="{% url 'page2' %}" class="nav-link">Второстепенная</a></li>
+                <li class="list-group-item"><a href="{% url 'news_home' %}" class="nav-link">Новостная страница</a></li>
             </ul>
         </aside>
         <main class="col-md-9">
