@@ -6,22 +6,36 @@
 
 {% block content %}
 <h1>Новостная страница</h1>
+    {% if news %}
+        {% for new in news %}
+            <div class="card">
+				<div class="card" style="width: 50rem;">
+					<div class="card-body">
+						<h5 class="card-title">{{ new.title }}</h5>
+						<p class="card-text">{{ new.short_description }} </p>
+						<a href="#" class="btn btn-primary">Подробнее</a>
+					</div>
+				</div>
+			</div>
 
-{% for new in news %}
-      <div style="max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
-    <h3 style="color: #333; font-size: 24px; border-bottom: 2px solid #007BFF; padding-bottom: 10px;">{{ new.title }}</h3>
+<!--          <div style="max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">-->
+<!--            <h3 style="color: #333; font-size: 24px; border-bottom: 2px solid #007BFF; padding-bottom: 10px;">{{ new.title }}</h3>-->
 
-    <h6 style="color: #555; font-size: 18px; margin-top: 20px;">Краткое описание</h6>
-    <p style="font-size: 16px; line-height: 1.5; color: #666;">{{ new.short_description }}</p>
+<!--            <h6 style="color: #555; font-size: 18px; margin-top: 20px;">Краткое описание</h6>-->
+<!--            <p style="font-size: 16px; line-height: 1.5; color: #666;">{{ new.short_description }}</p>-->
 
-    <h6 style="color: #555; font-size: 18px; margin-top: 20px;">Полное описание</h6>
-    <p style="font-size: 16px; line-height: 1.5; color: #666;">{{ new.text }}</p>
+<!--            <h6 style="color: #555; font-size: 18px; margin-top: 20px;">Полное описание</h6>-->
+<!--            <p style="font-size: 16px; line-height: 1.5; color: #666;">{{ new.text }}</p>-->
 
-    <h6 style="color: #555; font-size: 18px; margin-top: 20px;">Дата публикации</h6>
-    <p style="font-size: 16px; color: #666;">{{ new.pub_date }}</p>
+<!--            <h6 style="color: #555; font-size: 18px; margin-top: 20px;">Дата публикации</h6>-->
+<!--            <p style="font-size: 16px; color: #666;">{{ new.pub_date }}</p>-->
 
-    <h6 style="color: #555; font-size: 18px; margin-top: 20px;">Автор</h6>
-    <p style="font-size: 16px; color: #666;">{{ new.author }}</p>
-</div>
-{% endfor %}
+<!--            <h6 style="color: #555; font-size: 18px; margin-top: 20px;">Автор</h6>-->
+<!--            <p style="font-size: 16px; color: #666;">{{ new.author }}</p>-->
+<!--          </div>-->
+
+        {% endfor %}
+    {% else %}
+		<h4>Новостей ещё нет.</h4>
+	{% endif %}
 {% endblock %}
