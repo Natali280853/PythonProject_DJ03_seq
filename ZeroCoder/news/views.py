@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from .models import News_Post
 
 def home(request):
-    return render(request, 'news/news.html')
+    # Создаём переменную для получения всех записей.
+    news = News_Post.objects.all()
+    return render(request, 'news/news.html', {'news': news})
 
 # def index(request):
 #     data = {
